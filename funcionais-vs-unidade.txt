@@ -1,0 +1,7 @@
+Diferença 1 - Escopo:
+- Testes de Unidade: verificam unidades pequenas do código (funções/classes) isoladamente.
+- Testes Funcionais: verificam o sistema como um todo (fluxos end-to-end), incluindo integração entre componentes.
+
+Diferença 2 - Velocidade e Isolamento:
+- Testes de Unidade: rápidos e isolados (frequentemente usam mocks/stubs).
+- Testes Funcionais: mais lentos; executam em ambiente mais realista e testam interações entre partes do sistema.
