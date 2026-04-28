@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 import time
 import unittest
 
@@ -18,11 +19,11 @@ class NewVisitorTest(unittest.TestCase):
 
         # Ela nota que o título da página menciona TODO
         self.assertIn('To-Do', self.browser.title)
-        header_text = self.browser.find_element_by_tag_name('h1').text  
+        header_text = self.browser.find_element(By.TAG_NAME, 'h1').text
         self.assertIn('To-Do', header_text)
 
         # Ela é convidada a entrar com um item TODO imediatamente
-        inputbox = self.browser.find_element_by_id('id_new_item')  
+        inputbox = self.browser.find_element(By.ID, 'id_new_item')
         self.assertEqual(inputbox.get_attribute('placeholder'), 'Enter a to-do item')
 
         # Ela digita "Estudar testes funcionais" em uma caixa de texto
@@ -32,9 +33,9 @@ class NewVisitorTest(unittest.TestCase):
         # "1: Estudar testes funcionais" como um item da lista TODO
         inputbox.send_keys(Keys.ENTER)
         time.sleep(1)
-        
-        table = self.browser.find_element_by_id('id_list_table')
-        rows = table.find_elements_by_tag_name('tr')  
+
+        table = self.browser.find_element(By.ID, 'id_list_table')
+        rows = table.find_elements(By.TAG_NAME, 'tr')
         self.assertTrue(
             any(row.text == '1: Estudar testes funcionais' for row in rows)
         )
