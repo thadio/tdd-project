@@ -1,0 +1,95 @@
+A imagem mostra o fluxo clássico do **TDD (Test-Driven Development — Desenvolvimento Orientado a Testes)**, com dois ciclos principais: um ciclo externo (funcional) e um ciclo interno (unitário). A ideia central é simples, mas contraintuitiva: **você escreve o teste antes do código**.
+
+### 🔵 Visão geral do processo
+
+O fluxo pode ser entendido em duas camadas:
+
+---
+
+## 1. Ciclo externo (testes funcionais)
+
+Esse ciclo valida o comportamento do sistema como um todo:
+
+1. **Escrever um teste funcional**
+
+   * Representa um requisito real (ex: “usuário consegue fazer login”).
+
+2. **Executar o teste**
+
+   * Ele deve falhar inicialmente (porque ainda não há implementação).
+
+3. **Escrever código mínimo para passar no teste**
+
+   * Não é sobre perfeição, é só fazer o teste passar.
+
+4. **Verificar se precisa refatorar**
+
+   * Se sim → melhorar o código sem quebrar o teste.
+   * Se não → seguir para o próximo requisito.
+
+---
+
+## 2. Ciclo interno (unitário) — “Write minimal code”
+
+Dentro do passo de implementação, acontece um ciclo menor e mais rápido:
+
+1. **Escrever um teste unitário**
+
+   * Testa uma pequena parte do código (função, método, classe).
+
+2. **Executar o teste**
+
+   * Deve falhar (fase “RED”).
+
+3. **Escrever o mínimo de código para passar**
+
+   * Apenas o necessário (fase “GREEN”).
+
+4. **Refatorar**
+
+   * Melhorar estrutura, legibilidade, remover duplicação (fase “REFACTOR”).
+
+5. **Repetir o ciclo**
+
+   * Esse loop acontece várias vezes até cumprir o teste funcional maior.
+
+---
+
+## 🔁 O ciclo clássico do TDD
+
+Esse processo é frequentemente resumido como:
+
+> **Red → Green → Refactor**
+
+* 🔴 **Red**: teste falha
+* 🟢 **Green**: código mínimo para passar
+* 🔵 **Refactor**: melhorar o código
+
+---
+
+## 💡 O que a imagem enfatiza
+
+* Você **nunca começa pelo código**, sempre pelo teste.
+* O código cresce de forma incremental.
+* Refatoração é contínua (não é etapa opcional).
+* Há uma **hierarquia de testes**:
+
+  * Testes funcionais (macro)
+  * Testes unitários (micro)
+
+---
+
+## ✅ Benefícios desse processo
+
+* Código mais confiável (sempre testado)
+* Menos bugs em produção
+* Design mais limpo (porque o teste força boas interfaces)
+* Facilidade para refatorar sem medo
+
+---
+
+## ⚠️ Pontos de atenção
+
+* Pode parecer mais lento no começo
+* Exige disciplina
+* Testes ruins geram código ruim (qualidade dos testes importa)
